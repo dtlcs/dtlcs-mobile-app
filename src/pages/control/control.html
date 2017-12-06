@@ -9,5 +9,48 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Direction</ion-label>
+      <ion-select [(ngModel)]="direction">
+        <ion-option value="1" selected="true">North</ion-option>
+        <ion-option value="2">East</ion-option>
+        <ion-option value="3">South</ion-option>
+        <ion-option value="4">West</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <!-- <ion-list-header> -->
+        In-Lane 1
+        <!-- </ion-list-header> -->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>Manual control</ion-label>
+          <ion-toggle [(ngModel)]="lane1IsManual" (click)="setLaneManual(1, lane1IsManual)"></ion-toggle>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-segment [(ngModel)]="lane1State" color="primary">
+          <ion-segment-button value="red" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
+            Red
+          </ion-segment-button>
+          <ion-segment-button value="green" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
+            Green
+          </ion-segment-button>
+          <ion-segment-button value="blue" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
+            Blue
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
