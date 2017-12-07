@@ -1,6 +1,7 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HTTP } from '@ionic-native/http';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -8,40 +9,27 @@ import { HTTP } from '@ionic-native/http';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  public username: string;
-  public password: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HTTP) {
+  public error: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authProv: AuthProvider, public storage: Storage) {
   }
 
   ionViewDidLoad() {
   }
 
-  login(un: string, pw: string) {
-      let data = {
-        'username': un,
-        'password': pw
-      }
+  login(username: string, password: string) {
+    this.error = null;
 
-      let headers = {
-        'Content-Type': 'application/json'
-      };
-
-      this.http.setDataSerializer('json');
-
-      this.http.post('http://stls-server.herokuapp.com/api/user/authenticate', data, headers)
-      .then(res => {
-    
-        console.log(res.status);
-        console.log(res.data); 
-        console.log(res.headers);
+    this.authProv.loginAuth(username, password)
+      .then(res => {        
+        this.storage.set('session-user', res);
+        this.navCtrl.push('JunctionsPage');
       })
       .catch(error => {
-    
         console.log(error.status);
-        console.log(error.error); 
+        console.log(error.error);
         console.log(error.headers);
       });
   }
-
 }

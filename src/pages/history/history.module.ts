@@ -8,6 +8,6 @@ import { HistoryPage } from './history';
   ],
   imports: [
     IonicPageModule.forChild(HistoryPage),
-  ],
+  ]
 })
 export class HistoryPageModule {}
