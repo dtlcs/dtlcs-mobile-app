@@ -1,13 +1,25 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Junctions</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card *ngFor="let junction of junctionList">
+      <ion-item>
+        <h2>{{junction.name}}</h2>
+        <p>{{junction.street}}, {{junction.city}}, {{junction.postal_code}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <span item-left>{{junction.latitude}}, </span>
+        <span item-left>{{junction.longitude}}</span>
+        <button ion-button icon-left clear item-end (click)="setJunction(junction)">
+          <ion-icon name="pin"></ion-icon>
+          Select 
+        </button>
+      </ion-item>
+    </ion-card>
 
 </ion-content>

@@ -1,6 +1,3 @@
-import { JunctionsPage } from './../pages/junctions/junctions';
-import { ControlPage } from './../pages/control/control';
-import { HistoryPage } from './../pages/history/history';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,7 +13,7 @@ import { VipAccessPage } from '../pages/vip-access/vip-access';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = JunctionsPage;
+  rootPage: any = 'JunctionsPage';
 
   pages: Array<{title: string, component: any}>;
 
@@ -25,12 +22,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Junctions', component: JunctionsPage },
-      { title: 'Control', component: ControlPage },
-      { title: 'VIP Access', component: VipAccessPage },
-      { title: 'History', component: HistoryPage },
-      { title: 'Profile', component: ProfilePage },
-      { title: 'Settings', component: SettingsPage }
+      { title: 'Control', component: 'ControlPage' },
+      { title: 'VIP Access', component: 'VipAccessPage' },
+      { title: 'History', component: 'HistoryPage' },
+      { title: 'Profile', component: 'ProfilePage' },
+      { title: 'Settings', component: 'SettingsPage' }
     ];
 
   }

@@ -9,7 +9,7 @@ import { ToastController } from 'ionic-angular';
   ],
   imports: [
     IonicPageModule.forChild(HistoryPage),
-  ],
+  ]
 })
 export class HistoryPageModule {}
 

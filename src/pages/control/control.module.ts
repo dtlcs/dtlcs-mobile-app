@@ -4,10 +4,10 @@ import { ControlPage } from './control';
 
 @NgModule({
   declarations: [
-    ControlPage,
+    ControlPage
   ],
   imports: [
     IonicPageModule.forChild(ControlPage),
-  ],
+  ]
 })
 export class ControlPageModule {}
