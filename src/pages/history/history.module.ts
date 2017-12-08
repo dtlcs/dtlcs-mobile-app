@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HistoryPage } from './history';
+import { ToastController } from 'ionic-angular';
 
 @NgModule({
   declarations: [
@@ -11,3 +12,10 @@ import { HistoryPage } from './history';
   ],
 })
 export class HistoryPageModule {}
+
+export class MyPage {
+  constructor(public toastCtrl: ToastController) {
+  }
+
+  
+  }
