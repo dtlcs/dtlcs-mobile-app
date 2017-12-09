@@ -3,10 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { SettingsPage } from '../pages/settings/settings';
-import { ProfilePage } from '../pages/profile/profile';
-import { VipAccessPage } from '../pages/vip-access/vip-access';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,7 +20,6 @@ export class MyApp {
     this.pages = [
       { title: 'Control', component: 'ControlPage' },
       { title: 'VIP Access', component: 'VipAccessPage' },
-      { title: 'History', component: 'HistoryPage' },
       { title: 'Profile', component: 'ProfilePage' },
       { title: 'Settings', component: 'SettingsPage' }
     ];

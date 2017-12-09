@@ -24,7 +24,7 @@ export class LoginPage {
     this.authProv.loginAuth(username, password)
       .then(res => {        
         this.storage.set('session-user', res);
-        this.navCtrl.push('JunctionsPage');
+        this.navCtrl.setRoot('JunctionsPage');
       })
       .catch(error => {
         console.log(error.status);

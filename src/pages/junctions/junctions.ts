@@ -16,8 +16,8 @@ export class JunctionsPage {
   }
 
   ionViewDidLoad() {
-    let userSession = '{"id":1,"first_name":"Oshan","middle_name":"Ivantha","last_name":"Mudannayake","nic":"950722355V","role_id":1,"email":"oshan.ivantha@gmail.com","telephone":"0719084020","street":null,"city":null,"province":null,"postal_code":null,"user_id":1,"username":"ivantha","password":"cat"}';
-    this.storage.set('session-user', userSession);
+    let user = '{"id":1,"first_name":"Oshan","middle_name":"Ivantha","last_name":"Mudannayake","nic":"950722355V","role_id":1,"email":"oshan.ivantha@gmail.com","telephone":"0719084020","street":null,"city":null,"province":null,"postal_code":null,"user_id":1,"username":"ivantha","password":"cat"}';
+    this.storage.set('session-user', user);
 
     this.restProv.getJunctionList(4)
       .then(res => {
