@@ -23,7 +23,9 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            <div *ngIf="error">
+                {{error}} 
+            </div>
             <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
             </button>
           </ion-col>

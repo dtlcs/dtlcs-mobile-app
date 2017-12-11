@@ -1,45 +1,55 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Profile</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Profile</ion-title>
+	</ion-navbar>
 </ion-header>
 <ion-content padding>
-	<div class="profile">
-	<ion-item class="profile-item">
-		<div class="profile-picture">
-		<img src="http://www.workboatshow.com/wp-content/uploads/2017/11/a0C0H00001YsrqQUAR.png">
-		</div>
-		  <h2 class="profile-name dark">Name</h2>
-		  <h3 class="profile-role dark">Role</h3>
-    </ion-item>
-	</div>
-    <ion-list>
+	<ion-list>
 		<ion-item>
-    		<ion-label stacked>Email</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>Name</ion-label>
+			<ion-input id="name" type="text" [(ngModel)]="uname"></ion-input>
+		</ion-item>
 		<ion-item>
-    		<ion-label stacked>Telephone</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>NIC</ion-label>
+			<ion-input type="text" [(ngModel)]="nic"></ion-input>
+		</ion-item>
 		<ion-item>
-    		<ion-label stacked>Street</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>Role</ion-label>
+			<ion-input type="text"></ion-input>
+		</ion-item>
+
+		<div padding></div>
 		<ion-item>
-    		<ion-label stacked>City</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>Email</ion-label>
+			<ion-input type="text" [(ngModel)]="email"></ion-input>
+		</ion-item>
 		<ion-item>
-    		<ion-label stacked>Province</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>Telephone</ion-label>
+			<ion-input type="text" [(ngModel)]="telephone"></ion-input>
+		</ion-item>
+
+		<div padding></div>
 		<ion-item>
-    		<ion-label stacked>Postal Code</ion-label>
-    		<ion-input type="text"></ion-input>
-  		</ion-item>
+			<ion-label>Street</ion-label>
+			<ion-input type="text" [(ngModel)]="street"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>City</ion-label>
+			<ion-input type="text" [(ngModel)]="city"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Province</ion-label>
+			<ion-input type="text" [(ngModel)]="province"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Postal Code</ion-label>
+			<ion-input type="text" [(ngModel)]="postalCode"></ion-input>
+		</ion-item>
 	</ion-list>
+	<!-- <div padding>
+			<button ion-button full block>Save</button>
+		</div> -->
 </ion-content>

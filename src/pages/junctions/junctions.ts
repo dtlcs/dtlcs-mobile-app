@@ -16,22 +16,22 @@ export class JunctionsPage {
   }
 
   ionViewDidLoad() {
-    let user = '{"id":1,"first_name":"Oshan","middle_name":"Ivantha","last_name":"Mudannayake","nic":"950722355V","role_id":1,"email":"oshan.ivantha@gmail.com","telephone":"0719084020","street":null,"city":null,"province":null,"postal_code":null,"user_id":1,"username":"ivantha","password":"cat"}';
-    this.storage.set('session-user', user);
-
-    this.restProv.getJunctionList(4)
-      .then(res => {
-        console.log(JSON.stringify(res));
-        this.junctionList = res;
-      })
-      .catch(err => {
-        console.log(err.status);
-        console.log(err.error);
-        console.log(err.headers);
+    this.storage.get('session-user')
+      .then((val) => {
+        this.restProv.getJunctionList(val.id)
+          .then(res => {
+            console.log(JSON.stringify(res));
+            this.junctionList = res;
+          })
+          .catch(err => {
+            console.log(err.status);
+            console.log(err.error);
+            console.log(err.headers);
+          });
       });
   }
 
-  public setJunction(junction: any){
+  public setJunction(junction: any) {
     this.storage.set('session-junction', junction);
     this.navCtrl.setRoot('ControlPage');
   }

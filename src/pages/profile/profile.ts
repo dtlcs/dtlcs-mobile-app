@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public user: any;
+  public uname: string;
+  public nic: string;
+  public role: string;
+  public email: string;
+  public telephone: string;
+  public street: string;
+  public city: string;
+  public province: string;
+  public postalCode: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    this.storage.get('session-user')
+    .then((val) => {
+      this.user = val;
+
+      this.uname = val.name;
+      this.nic = val.nic;
+      this.email = val.email;
+      this.telephone = val.telephone;
+      this.street = val.street;
+      this.city = val.city;
+      console.log(val);
+      this.province = val.province;
+      this.postalCode = val.postal_code
+    });
   }
 
 }

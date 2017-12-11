@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label>Direction</ion-label>
+      <ion-label>Road direction</ion-label>
       <ion-select [(ngModel)]="direction">
         <ion-option value="1" selected="true">North</ion-option>
         <ion-option value="2">East</ion-option>
@@ -19,47 +19,69 @@
       </ion-select>
     </ion-item>
   </ion-list>
-
   <ion-grid>
-    <ion-row>
-      <ion-col col-12>
-        <!-- <ion-list-header> -->
-        In-Lane 1
-        <!-- </ion-list-header> -->
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
-        <ion-item>
-          <ion-label>Manual control</ion-label>
-          <ion-toggle [(ngModel)]="lane1IsManual" (click)="setLaneManual(1, lane1IsManual)"></ion-toggle>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
-          <ion-list radio-group [(ngModel)]="autoManufacturers">
-              
-                <ion-list-header>
-                  Lane 1
-                </ion-list-header>
-              
-                <ion-radio value="red"></ion-radio>
-                <ion-radio value="yellow"></ion-radio>
-                <ion-radio value="green"></ion-radio>
-              </ion-list>
-        <!-- <ion-segment [(ngModel)]="lane1State" color="primary">
-          <ion-segment-button value="red" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
-            Red
-          </ion-segment-button>
-          <ion-segment-button value="green" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
-            Green
-          </ion-segment-button>
-          <ion-segment-button value="blue" (ionSelect)="setTrafficLightState(1, lane1State)" disabled={{!lane1IsManual}}>
-            Blue
-          </ion-segment-button>
-        </ion-segment> -->
-      </ion-col>
-    </ion-row>
+      <ion-row>
+          <ion-col col-12>
+              <ion-label>In Lane 1</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-item>
+            <ion-label>Manual control</ion-label>
+            <ion-toggle [(ngModel)]="lane1IsManual" (click)="setLaneManual(1, lane1IsManual)"></ion-toggle>
+          </ion-item>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 padding>
+                <ion-list radio-group [(ngModel)]="lane1TL">
+                    <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                  </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12>
+                  <ion-label>In Lane 2</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-item>
+                <ion-label>Manual control</ion-label>
+                <ion-toggle [(ngModel)]="lane2IsManual" (click)="setLaneManual(1, lane1IsManual)"></ion-toggle>
+              </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 padding>
+                    <ion-list radio-group [(ngModel)]="lane2TL">
+                        <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                      </ion-list>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-12>
+                      <ion-label>In Lane 3</ion-label>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-item>
+                    <ion-label>Manual control</ion-label>
+                    <ion-toggle [(ngModel)]="lane3IsManual" (click)="setLaneManual(1, lane1IsManual)"></ion-toggle>
+                  </ion-item>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12 padding>
+                        <ion-list radio-group [(ngModel)]="lane3TL">
+                            <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                          </ion-list>
+                    </ion-col>
+                  </ion-row>
   </ion-grid>
 </ion-content>

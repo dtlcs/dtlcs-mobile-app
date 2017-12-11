@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the VipAccessPage page.
+ * Generated class for the ReportFaultPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,15 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-vip-access',
-  templateUrl: 'vip-access.html',
+  selector: 'page-report-fault',
+  templateUrl: 'report-fault.html',
 })
-export class VipAccessPage {
+export class ReportFaultPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    console.log('ionViewDidLoad ReportFaultPage');
   }
 
 }
