@@ -33,11 +33,11 @@
         </ion-row>
         <ion-row>
             <ion-col col-12 padding>
-                <ion-list radio-group [(ngModel)]="lane1TL">
-                    <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
-                    <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
-                    <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
-                    <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                <ion-list radio-group [(ngModel)]="lane1State">
+                    <ion-radio class="off-radio" value="off" [disabled]="!lane1IsManual" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="red-radio" value="red" [disabled]="!lane1IsManual" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="yellow-radio" value="yellow" [disabled]="!lane1IsManual" style="margin-left: 2em;"></ion-radio>
+                    <ion-radio class="green-radio" value="green" [disabled]="!lane1IsManual" style="margin-left: 2em;"></ion-radio>
                   </ion-list>
             </ion-col>
           </ion-row>
@@ -54,11 +54,11 @@
             </ion-row>
             <ion-row>
                 <ion-col col-12 padding>
-                    <ion-list radio-group [(ngModel)]="lane2TL">
-                        <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
-                        <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
-                        <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
-                        <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                    <ion-list radio-group [(ngModel)]="lane2State">
+                        <ion-radio class="off-radio" value="off" [disabled]="!lane2IsManual" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="red-radio" value="red" [disabled]="!lane2IsManual" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="yellow-radio" value="yellow" [disabled]="!lane2IsManual" style="margin-left: 2em;"></ion-radio>
+                        <ion-radio class="green-radio" value="green" [disabled]="!lane2IsManual" style="margin-left: 2em;"></ion-radio>
                       </ion-list>
                 </ion-col>
               </ion-row>
@@ -75,11 +75,11 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-12 padding>
-                        <ion-list radio-group [(ngModel)]="lane3TL">
-                            <ion-radio class="off-radio" value="off" style="margin-left: 2em;"></ion-radio>
-                            <ion-radio class="red-radio" value="red" style="margin-left: 2em;"></ion-radio>
-                            <ion-radio class="yellow-radio" value="yellow" style="margin-left: 2em;"></ion-radio>
-                            <ion-radio class="green-radio" value="green" style="margin-left: 2em;"></ion-radio>
+                        <ion-list radio-group [(ngModel)]="lane3State">
+                            <ion-radio class="off-radio" value="off" [disabled]="!lane3IsManual" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="red-radio" value="red" [disabled]="!lane3IsManual" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="yellow-radio" value="yellow" [disabled]="!lane3IsManual" style="margin-left: 2em;"></ion-radio>
+                            <ion-radio class="green-radio" value="green" [disabled]="!lane3IsManual" style="margin-left: 2em;"></ion-radio>
                           </ion-list>
                     </ion-col>
                   </ion-row>
